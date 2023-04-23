@@ -8,6 +8,7 @@ if __name__ == '__main__':
     # f = lambda x, y: x * y * y
     # euler_points = euler_method(f, 0, 1, 1, 1000)
     # analytic_function = lambda x: 2 / (2 - x * x)
+    # TODO: use interpolation
 
     f = lambda x, y: -y * math.cos(x) + math.exp(-math.sin(x))
     euler_points = euler_method(f, 0, 5, 0, 100)

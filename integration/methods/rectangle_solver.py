@@ -36,9 +36,9 @@ def rectangular_integration(
     error = 0.0
     for _ in range(max_iter):
         tmp = integrate_with_rule(function, integration_rule, lower_bound, upper_bound, n)
-        if abs(result - tmp) * runge_coeff < epsilon:
-            break
         error = abs(result - tmp)
+        if error * runge_coeff < epsilon:
+            break
         result = tmp
         n *= 2
     if reverse:

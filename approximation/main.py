@@ -1,7 +1,8 @@
 import math
+import matplotlib.pyplot as plt
 
 from approximation.methods.points_generation import generate_points
-from lib.plot_gui import show_plot
+from lib.plot_gui import draw_function, draw_points, draw_point
 from lib.validated_read import read_int, read_string, read_float
 from methods.spline_interpolation import calc_spline
 
@@ -39,17 +40,27 @@ def main():
     noise_deviation = 0.0
     if add_noise:
         noise_deviation = read_float("Enter noise deviation", min_val=0.0)
-    function, function_str = functions[f_num]
+    spline_point_x = read_float("Enter the point you are interested in", min_val=lower_bound, max_val=upper_bound)
 
     # computation
+    function, function_str = functions[f_num]
     control_points = generate_points(function, control_points_num, lower_bound, upper_bound, random_space=add_noise,
                                      add_noise=add_noise, noise_deviation=noise_deviation)
     spline_f = calc_spline(control_points)
-    function_points = generate_points(function, 500, lower_bound, upper_bound)
-    spline_function_points = generate_points(spline_f, 500, lower_bound, upper_bound)
+    spline_point_y = spline_f(spline_point_x)
 
     # plotting
-    show_plot(control_points, function_points, spline_function_points, function_str)
+    print(f"Computed value for point {spline_point_x}: {spline_point_y}")
+    draw_function(function, lower_bound, upper_bound, "Original function", "orange")
+    draw_function(spline_f, lower_bound, upper_bound, "Spline function", "green")
+    draw_points(control_points, "Control points", "red")
+    draw_point(spline_point_x, spline_point_y, color="blue", label="Computed point")
+    plt.title(f"Function: {function_str}")
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.legend()
+    plt.grid()
+    plt.show()
 
 
 if __name__ == '__main__':
