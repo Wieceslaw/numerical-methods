@@ -1,10 +1,9 @@
 from typing import Callable
 
-from approximation.methods.gauss_solver import gauss_elimination
+from linear.methods.gauss_solver import gauss_elimination
 
 
-def calc_spline(points: list[tuple[float, float]]) -> Callable[[float], float]:
-    # TODO: refactor
+def evaluate_spline(points: list[tuple[float, float]]) -> Callable[[float], float]:
     x, y = zip(*points)
     n = len(points)
     h = calc_h(x)

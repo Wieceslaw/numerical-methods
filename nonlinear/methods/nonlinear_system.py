@@ -1,6 +1,6 @@
 from typing import Callable
 
-from approximation.methods.gauss_solver import gauss_elimination
+from linear.methods.gauss_solver import gauss_elimination
 
 
 def compute_partial_derivative(f: Callable[[list[float]], float],

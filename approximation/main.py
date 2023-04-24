@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from approximation.methods.points_generation import generate_points
 from lib.plot_gui import draw_function, draw_points, draw_point
 from lib.validated_read import read_int, read_string, read_float
-from methods.spline_interpolation import calc_spline
+from methods.spline_interpolation import evaluate_spline
 
 functions = [
     (lambda x: math.log(x), "f(x) = log(x)"),
@@ -46,7 +46,7 @@ def main():
     function, function_str = functions[f_num]
     control_points = generate_points(function, control_points_num, lower_bound, upper_bound, random_space=add_noise,
                                      add_noise=add_noise, noise_deviation=noise_deviation)
-    spline_f = calc_spline(control_points)
+    spline_f = evaluate_spline(control_points)
     spline_point_y = spline_f(spline_point_x)
 
     # plotting
