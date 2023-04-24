@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from approximation.methods.points_generation import generate_points
 from lib.plot_gui import draw_function, draw_points, draw_point
 from lib.validated_read import read_int, read_string, read_float
-from methods.spline_interpolation import evaluate_spline
+from methods.spline_interpolation_solver import evaluate_spline
 
 functions = [
     (lambda x: math.log(x), "f(x) = log(x)"),

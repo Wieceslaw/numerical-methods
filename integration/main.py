@@ -1,6 +1,6 @@
 import math
 
-from integration.methods.rectangle_solver import rectangular_integration, middle_rule, right_rule, left_rule
+from integration.methods.rectangle_integration_solver import rectangular_integration, middle_rule, right_rule, left_rule
 from lib.validated_read import read_int, read_float
 
 

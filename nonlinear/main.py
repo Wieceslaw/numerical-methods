@@ -1,6 +1,6 @@
 from lib.validated_read import read_string, read_int, read_float
-from methods.nonlinear_equation import bisection_method, secant_method
-from methods.nonlinear_system import newton_method
+from methods.nonlinear_equation_solver import bisection_method, secant_method
+from methods.nonlinear_system_solver import newton_method
 
 
 def main():

@@ -2,7 +2,7 @@ from typing import Callable
 
 
 def euler_method(f: Callable[[float, float], float],
-                 a: float, b: float, y_a: float, n: int = 1000) -> list[tuple[float, float]]:
+                 a: float, y_a: float, b: float, n: int = 1000) -> list[tuple[float, float]]:
     result = []
     dx = (b - a) / n
     x = a
