@@ -12,5 +12,5 @@ def euler_method(f: Callable[[float, float], float],
         slope = f(x, y)
         x += dx
         y += dx * slope
-    result.append((x, y))
+    result.append((b, y))
     return result

@@ -2,7 +2,7 @@ import math
 import matplotlib.pyplot as plt
 
 from approximation.methods.spline_interpolation_solver import evaluate_spline
-from lib.plot_gui import draw_function, draw_point
+from lib.plot_gui import draw_function, draw_point, draw_points
 from lib.validated_read import read_int, read_float
 from methods.cauchy_problem_solver import euler_method
 
@@ -10,7 +10,12 @@ functions = [
     (  # x: 0, y: 0
         (lambda x, y: -y * math.cos(x) + math.exp(-math.sin(x)), "y'(x) = -y * cos(x) + e^(sin(x))"),
         (lambda x: x * math.exp(-math.sin(x)), "y(x) = x * e^(-sin(x))")
+    ),
+    (  # x: 1, y: 3
+        (lambda x, y: x * x + 1 + 2 * x * y / (1 + x * x), "y'(x) = x^2 + 1 + 2xy / (1 + x^2)"),
+        (lambda x: (x + 1 / 2) * (1 + x * x), "(x + 1/2)(1 + x^2)")
     )
+    # TODO: add more
 ]
 
 
@@ -35,11 +40,14 @@ def main():
     print(f"Analytical solution: {analytical_solution_f_str}")
 
     # plotting
-    draw_point(initial_x, initial_y, label="Initial condition", color="red")
+    draw_point(initial_x, initial_y, label="Initial condition", color="black")
     draw_point(solution_x, solution_y, label="Solution point", color="blue")
-    draw_function(euler_solution_f, initial_x, solution_x, label="Euler solution", color="orange")
-    draw_function(analytical_solution_f, initial_x, solution_x, label="Analytic solution", color="green")
+    draw_points(euler_solution_points, label="Euler solution points", color="red")
+    draw_function(euler_solution_f, initial_x, solution_x, label="Euler solution function", color="orange")
+    draw_function(analytical_solution_f, initial_x, solution_x, label="Analytic solution function", color="green")
 
+    plt.xlabel("X")
+    plt.ylabel("Y")
     plt.title(equation_str)
     plt.grid()
     plt.legend()
