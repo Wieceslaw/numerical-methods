@@ -1,9 +1,7 @@
-# Все лабы по вычислительной математике ИВТ-2023
+# Numerical Methods Assignments
 
-1) В разделе [questions](/questions) есть частозадаваемые вопросы на защитах, дополняйте вопросы (даже без ответов) и поправляйте ошибки в ответах пул-реквестами 
-2) Даже не пытайтесь списывать решения численных методов для сдачи на платформе, антиплагиат палит очень быстро, мне ничего не будет - вам лишние проблемы
-3) Если же вам все-таки лень писать самому решение, даже основываясь на готовом, и вы не хотите схватить плагиат:
-    - Перепишите на другой язык, например, на Java
-    - Не знаете другой язык или лень даже это? Можете попробовать [обфусцировать](https://en.wikipedia.org/wiki/Obfuscation_(software)) мой код, в интернете есть куча сайтов для этого, [например](https://pyob.oxyry.com/). Платформа это не спалит, а вручуню код, скорее всего, не смотрят. Но если получится, что вас все-таки спалят, пилите реакции в [личку](https://t.me/Wieceslaw), очень интересно, что будет
-    - Если все-таки будете пользоваться обфускацией, то лучше подобрать какую-то рандомизированную, дабы не получить одинаковое с кем-то решение
-4) И самое важное!!! Не забывайте ставить звездочки!!!
+1. [Solving systems of linear equations](linear) - Gauss elimination with partial pivoting
+2. [Solving nonlinear systems and equations](nonlinear) - Newton, Bisection, Secant methods
+3. [Numerical Integration](integration) - Rectangular methods
+4. [Approximation and Interpolation](approximation) - Quadratic Splines interpolation
+5. [Differential Equations and Cauchy Problem](differential-equations) - Euler method
