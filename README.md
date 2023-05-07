@@ -1,6 +1,6 @@
 # Numerical Methods Course Assignments
 
-All numerical methods are available using CLI Python program
+All numerical methods are available using following CLI Python programs
 
 1. [Solving systems of linear equations](linear) - Gauss elimination with partial pivoting
 2. [Solving nonlinear systems and equations](nonlinear) - Newton, Bisection, Secant methods
