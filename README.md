@@ -1,4 +1,4 @@
-# Numerical Methods Assignments
+# Numerical Methods Course Assignments
 
 All numerical methods are avalable using CLI Python program
 
